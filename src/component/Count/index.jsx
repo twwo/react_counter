@@ -12,12 +12,14 @@ class Count extends React.Component {
     this.setState((state) => ({
       count: state.count + 1,
     }));
+    this.props.totalPlus();
   };
 
   countReduce = (e) => {
     this.setState((state) => ({
       count: state.count - 1,
     }));
+    this.props.totalReduce();
   };
 
   render() {
