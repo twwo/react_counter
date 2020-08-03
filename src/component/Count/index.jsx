@@ -1,6 +1,10 @@
 import React from "react";
 
 class Count extends React.Component {
+  componentDidMount = () => {
+    this.props.onRef(this);
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -21,6 +25,12 @@ class Count extends React.Component {
     }));
     this.props.totalReduce();
   };
+
+  clear = (e) => {
+    this.setState({
+      count: 0,
+    })
+  }
 
   render() {
     return (

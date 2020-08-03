@@ -7,13 +7,22 @@ class CountGroup extends React.Component {
     this.state = {
       number: 0,
       total: 0,
+      children: [],
     };
+  }
+
+  addChild = (child) => {
+    this.state.children.push(child);
   }
 
   setNumberOfCounters = (e) => {
     this.setState({
       number: Number(e.target.value),
+      total: 0
     });
+    this.state.children.forEach(child => {
+        child.clear();
+    })
   };
 
   totalPlus = (e) => {
@@ -44,6 +53,7 @@ class CountGroup extends React.Component {
             key={index}
             totalPlus={this.totalPlus}
             totalReduce={this.totalReduce}
+            onRef={this.addChild}
           />
         ))}
       </div>
