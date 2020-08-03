@@ -1,11 +1,11 @@
-import React from 'react';
-import './App.css';
-import CountGroup from './component/CountGroup';
+import React from "react";
+import "./App.css";
+import CountGroup from "./component/CountGroup";
 
 function App() {
   return (
-    <div>
-      <header>
+    <div className="App">
+      <header className="App-header">
         <CountGroup />
       </header>
     </div>
